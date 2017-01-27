@@ -1,2 +1,2 @@
 # Rhea
-Event Registration App 
+Event Registration App Made with Python and Django Framework
