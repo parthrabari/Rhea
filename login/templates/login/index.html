@@ -11,11 +11,6 @@
 
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
-
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
@@ -28,8 +23,8 @@
   <body class="container">
     <h1 class="jumbotron">Welcome to Maa Events</h1>
     <div class="text-center">
-      <a class="btn" href = "{% url 'login:register' %}">Register</a>
-      <a class="btn" href = "{% url 'admin:index' %}">Admin Login</a>
+      <a class="btn btn-primary" href = "{% url 'login:register' %}">Register</a>
+      <a class="btn btn-primary" href = "{% url 'admin:index' %}">Admin Login</a>
     </div>
   </body>
 </html>

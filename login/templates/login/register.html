@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Registration</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!--Selecter dropdown -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.1/css/bootstrap-select.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.1/js/bootstrap-select.min.js"></script>
+
+    <!-- (Optional) Latest compiled and minified JavaScript translation files -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.1/js/i18n/defaults-*.min.js"></script>
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    {% load static %}
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'login/style.css' %}" />
+  </head>
+  <body class="container">
+  <h1 id = "reg" class="well">Event Registration</h1>
+  <h5 class ="alert alert-danger" >All the Fields are mandatory</h5>
+  <!-- <form>
+    <div class="form-group">
+      <label for="name">Full Name:</label>
+      <input type="text" class="form-control" id="name" required="true">
+    </div>
+    <div class="form-group">
+      <label for="mob">Mobile:</label>
+      <input type="phone" class="form-control" id="mob" required="true" maxlength="10">
+    </div>
+    <div class="form-group">
+      <label for="email">Email address:</label>
+      <input type="email" class="form-control" id="email" required="true">
+    </div>
+    <div class="form-group">
+      <label for="reg">Registration Type:  </label>
+      <select class="selectpicker" required="true">
+          <option value="1">Self</option>
+          <option value="2">Group</option>
+          <option value="3">Corporate</option>
+          <option value="4">Others</option>
+      </select>
+    </div>
+    <div class= "form-group">
+      <label for="noft">Number of Tickets:</label>
+      <input type="number" class="form-control" id="noft" ="" max="10" min="1" value = "1" required="true">
+    </div>
+    <div class="text-center">
+      <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">Preview</button>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </form> -->
+  <form method="post" action="" enctype="multipart/form-data">{% csrf_token %}
+    <div class="text-center">
+      <table>
+      {{ form.as_table }}
+    </table>
+      <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">Preview</button>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </form>
+  {% if messages %}
+  <ul class="messages">
+      {% for message in messages %}
+      <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+      {% endfor %}
+  </ul>
+  {% endif %}
+  </body>
+</html>

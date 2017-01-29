@@ -1,1 +1,26 @@
+#reg{
+  text-align: center;
+  color: orangered;
+  text-indent: bold;
+}
+body{
+  background-color: plum;
+}
+form {
+ margin: auto;
+ padding: 3em 5em;
+ border: 2px solid;
+ border-radius: 5px;
+ color: darkblue;
+ background-color: azure;
+}
 
+#mes ul li{
+ list-style-type:none;
+  margin: auto;
+  padding: 3em 5em;
+  border: 2px solid;
+  border-radius: 5px;
+  color: darkblue;
+  background-color: azure;
+}
