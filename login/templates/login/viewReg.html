@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Success</title>
+    <title>AllRegistrations</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
     <!-- jQuery library -->
@@ -27,16 +27,29 @@
     <link rel="stylesheet" type="text/css" href="{% static 'login/style.css' %}" />
   </head>
   <body class="container">
-    <div class = "text-center">
-        {% if messages %}
-        <ul id="mes">
-            {% for message in messages %}
-            <li style = "color=blue;">{{ message }}</li>
-            {% endfor %}
-        </ul>
-        {% endif %}
+    <table>
+      <tr>
+        <th>Registration-ID</th>
+        <th>Full name</th>
+        <th>Mpbile</th>
+        <th>Email</th>
+        <th>ID</th>
+        <th>Type</th>
+        <th>No.of.Ticketss</th>
+      </tr>
+   {% for obj in o_list %}
 
-    <a class="btn btn-primary" href="{% url 'login:index' %}">Home</a>
-    </div>
+     <tr>
+       <td>{{obj.reg_no}}</td>
+       <td>{{obj.name}}</td>
+       <td>{{obj.phone_no}}</td>
+       <td>{{obj.email}}</td>
+       <td>{{obj.id_card}}</td>
+       <td>{{obj.reg_type}}</td>
+       <td>{{obj.no_of_tkt}}</td>
+     </tr>
+
+   {% endfor %}
+   </table>
   </body>
 </html>

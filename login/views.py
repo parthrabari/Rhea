@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from .forms import LoginForm
 from django.contrib import messages
 from django.template import RequestContext
+from .models import LoginData
 
 # Create your views here.
 # def Home(request):
@@ -28,3 +29,12 @@ def register(request):
         "form":form,
     }
     return render(request,"login/register.html",context)
+
+
+def all_data(request):
+     queryset = LoginData.objects.all()
+     context = {
+        "o_list" : queryset,
+        "title": "List"
+     }
+     return render(request,"login/viewReg.html",context)
